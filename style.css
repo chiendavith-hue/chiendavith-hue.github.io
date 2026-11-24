@@ -23,7 +23,7 @@ body {
 }
 
 h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; margin: 0 0 0.5em; }
-h1 { font-size: 2.4rem; }
+h1 { font-size: 2.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
 h2 { font-size: 1.6rem; padding-bottom: 0.3em; border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 0.8em; }
 h3 { font-size: 1.1rem; color: var(--accent-dark); }
 
@@ -40,7 +40,7 @@ section { padding: 56px 0 8px; }
   border-bottom: 1px solid var(--border);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.brand { font-family: Georgia, serif; font-weight: bold; color: var(--text); font-size: 1.15rem; }
+.brand { font-family: Georgia, serif; font-weight: bold; color: var(--text); font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .nav-links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--text); font-size: 0.95rem; }
 .nav-links a:hover { color: var(--accent); text-decoration: none; }
