@@ -1,0 +1,100 @@
+:root {
+  --text: #1f2933;
+  --muted: #616e7c;
+  --accent: #0f766e;
+  --accent-dark: #0b5a54;
+  --bg: #ffffff;
+  --bg-soft: #f5f7f8;
+  --border: #e4e7eb;
+  --max: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; margin: 0 0 0.5em; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.6rem; padding-bottom: 0.3em; border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 0.8em; }
+h3 { font-size: 1.1rem; color: var(--accent-dark); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+main, .nav, .site-footer { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+section { padding: 56px 0 8px; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { font-family: Georgia, serif; font-weight: bold; color: var(--text); font-size: 1.15rem; }
+.nav-links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--text); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+.menu-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; font: inherit; cursor: pointer; }
+
+.hero { display: flex; gap: 36px; align-items: center; padding-top: 64px; }
+.avatar {
+  flex: 0 0 140px; width: 140px; height: 140px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-size: 2.6rem; letter-spacing: 2px;
+}
+.subtitle { font-size: 1.2rem; color: var(--accent-dark); margin: 0 0 0.4em; }
+.affiliation { color: var(--muted); margin: 0 0 1em; }
+.actions { margin: 0; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.button {
+  display: inline-block; padding: 9px 20px; border-radius: 6px;
+  background: var(--accent); color: #fff; font-size: 0.95rem;
+}
+.button:hover { background: var(--accent-dark); text-decoration: none; }
+.button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.button.ghost:hover { background: var(--bg-soft); }
+
+.lead { font-weight: 600; color: var(--muted); }
+.muted { color: var(--muted); }
+
+.cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.cards li { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; }
+.cards p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+
+.timeline { margin: 0 0 1em; }
+.timeline dt { font-weight: 600; }
+.timeline dd { margin: 0 0 0.8em; color: var(--muted); }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.contact-list span { flex: 0 0 90px; font-weight: 600; color: var(--muted); }
+
+.site-footer { margin-top: 64px; padding-top: 20px; padding-bottom: 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+  .actions { justify-content: center; }
+  h1 { font-size: 2rem; }
+  .menu-toggle { display: block; }
+  .nav { position: relative; }
+  .nav-links {
+    display: none; position: absolute; top: 60px; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 8px 24px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; }
+  .contact-list li { flex-direction: column; gap: 2px; }
+}
